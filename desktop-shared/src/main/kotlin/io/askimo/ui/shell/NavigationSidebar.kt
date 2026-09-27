@@ -553,9 +553,9 @@ private fun collapsedNavigationSidebar(
     }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// ────────────────────────────────────────────────────────────────────────────
 // Nav item row (expanded sidebar)
-// ──────────────��──────────────────────────────────────────────────────────────
+// ────────────────────────────────────────────────────────────────────────────
 
 @Composable
 private fun sidebarNavItemRow(item: SidebarNavItem) {
@@ -658,7 +658,7 @@ private fun sidebarPanelToggleIcon(
         },
     ) {
         val strokeWidth = size.minDimension * 0.09f
-        val cornerRadius = CornerRadius(size.minDimension * 0.16f)
+        val cornerRadius = CornerRadius(size.minDimension * 00.16f)
         val inset = strokeWidth / 2f
         val frameSize = Size(size.width - strokeWidth, size.height - strokeWidth)
         val frameTopLeft = Offset(inset, inset)
@@ -709,7 +709,7 @@ private fun sidebarPanelToggleIcon(
     }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────
 // Logo helpers
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -862,7 +862,6 @@ private fun pinnedProjectItem(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = Spacing.micro)
             .hoverable(interactionSource),
     ) {
         themedTooltip(text = project.name) {
@@ -878,7 +877,6 @@ private fun pinnedProjectItem(
                 selected = false,
                 onClick = { onSelectProject(project.id) },
                 modifier = Modifier
-                    .padding(vertical = Spacing.micro)
                     .pointerHoverIcon(PointerIcon.Hand),
             )
         }
@@ -958,7 +956,6 @@ private fun pinnedSessionItem(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = Spacing.micro)
             .hoverable(interactionSource),
     ) {
         sessionDrawerItemContent(
@@ -1018,7 +1015,7 @@ private fun pinnedSessionItem(
     }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// ────────────────────────────────────────────────────────────────────────────
 // Sessions list
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -1044,6 +1041,7 @@ private fun sessionsList(
             top = Spacing.extraSmall,
             bottom = Spacing.extraSmall,
         ),
+        verticalArrangement = Arrangement.spacedBy(0.dp),
     ) {
         if (sessionsViewModel.recentSessions.isEmpty()) {
             Text(
@@ -1133,7 +1131,6 @@ private fun sessionItemWithMenu(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = Spacing.micro)
             .hoverable(interactionSource),
     ) {
         sessionDrawerItemContent(
